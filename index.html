@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-bg: #f8f8f8;
+      --main-bg: #fff;
       --main-color: #2C2C2C;
       --accent: #ffc400;
       --accent-hover: #ffc400;
@@ -86,9 +86,13 @@
       border-radius: 4px;
       display: block;
     }
+
     .nav-list > li:hover > a,
     .nav-list > li:focus-within > a {
       text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 10px;
       background: transparent;
       color: inherit;
     }
@@ -118,9 +122,13 @@
       border-radius: 0;
       transition: background 0.2s, color 0.2s;
     }
+
     .submenu li a:hover,
     .submenu li a:focus {
       text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 10px;
       background: transparent;
       color: inherit;
     }
@@ -186,9 +194,13 @@
       display: block;
       transition: background 0.2s, color 0.2s;
     }
+
     .mobile-nav > ul > li > a:hover,
     .mobile-nav > ul > li > a:focus {
       text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 10px;
       background: transparent;
       color: inherit;
     }
@@ -213,6 +225,9 @@
     .mobile-nav .submenu-mobile li a:hover,
     .mobile-nav .submenu-mobile li a:focus {
       text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 10px;
       background: transparent;
       color: inherit;
     }
@@ -310,7 +325,7 @@
       font-weight: 500;
     }
     .feature:hover, .feature:focus {
-      transform: scale(1.05);
+      transform: none;
     }
     .feature img {
       width: 64px;
@@ -342,7 +357,7 @@
         transform 0.5s cubic-bezier(0.59, 0.03, 0.2, 1);
     }
     .article:hover, .article:focus {
-      transform: scale(1.05);
+      transform: none;
       box-shadow: 0 4px 16px #2C2C2C1a;
     }
     .article img {
