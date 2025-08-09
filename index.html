@@ -28,6 +28,8 @@
       font-family: var(--font-main);
       color: #222;
       scroll-behavior: smooth;
+      font-weight: 400;
+      line-height: 1.75;
     }
     header {
       background: var(--main-color);
@@ -39,7 +41,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 0.5em;
-      position: relative;
+      position: sticky;
+      top: 0;
       z-index: 10;
       transition: height 0.2s;
     }
@@ -235,7 +238,7 @@
     /* HERO SECTION */
     .hero {
       background: url('https://mojazemlja.rs/img/moja-zemlja-bg.webp') center/cover no-repeat;
-      min-height: 350px;
+      min-height: 525px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -283,7 +286,7 @@
       display: inline-block;
     }
     .btn-main:hover, .btn-main:focus {
-      background: var(--accent);
+      background: #fff;
       color: #222;
       border: 1px solid var(--accent);
       /* transform removed to prevent size change */
@@ -575,11 +578,7 @@
     </div>
 
     <div style="text-align:center;margin-top:1em">
-      <h4>Obavesti me kada bude novih prodaja</h4>
-      <form class="simple-form" style="max-width:420px;margin:auto;display:flex;gap:0.5em;flex-wrap:wrap;align-items:center;justify-content:center">
-        <input type="email" name="email" placeholder="Tvoj email" required style="flex:1;min-width:200px;padding:0.7em;border-radius:6px;border:1px solid #ccc;">
-        <button type="submit" class="btn-main">Prijavi se</button>
-      </form>
+      <a class="btn-main" href="#ponuda">Obavesti me kada bude novih prodaja</a>
     </div>
   </section>
 
@@ -594,8 +593,7 @@
     <h2>Interesuje te ulaganje u orahe ali i druge kulture?</h2>
     <p>Ostavi svoju email adresu da dobiješ više informacija o aktuelnoj ponudi.</p>
     <form class="simple-form" style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:0.6em;">
-      <input type="text" name="name" placeholder="Tvoje ime" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
-      <input type="email" name="email" placeholder="Tvoj email" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
+      <input type="email" name="email" placeholder="E-mail adresa" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
       <button type="submit" class="btn-main" style="width:100%">Pošalji</button>
     </form>
   </section>
