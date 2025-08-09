@@ -434,14 +434,10 @@
     </div>
     <nav>
       <ul class="nav-list">
-        <li>
-          <a href="#">Početna</a>
-          <ul class="submenu">
-            <li><a href="#">Kupi od drugih investitora</a></li>
-            <li><a href="#">Investiraj u novu plantažu</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact">Kontakt</a></li>
+        <li><a href="#home">Početna</a></li>
+        <li><a href="#market">Kupi od drugih investitora</a></li>
+        <li><a href="#aktivna-ponuda">Investiraj u novu plantažu</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
     <button class="burger" id="burger" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobile-nav">
@@ -451,87 +447,162 @@
     </button>
     <div class="mobile-nav" id="mobile-nav">
       <ul>
-        <li>
-          <a href="#" class="has-submenu" onclick="toggleSubmenuMobile(event)">Početna</a>
-          <ul class="submenu-mobile">
-            <li><a href="#">Kupi od drugih investitora</a></li>
-            <li><a href="#">Investiraj u novu plantažu</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact" onclick="closeMobileNav()">Kontakt</a></li>
+        <li><a href="#home" onclick="closeMobileNav()">Početna</a></li>
+        <li><a href="#market" onclick="closeMobileNav()">Kupi od drugih investitora</a></li>
+        <li><a href="#aktivna-ponuda" onclick="closeMobileNav()">Investiraj u novu plantažu</a></li>
+        <li><a href="#kontakt" onclick="closeMobileNav()">Kontakt</a></li>
       </ul>
     </div>
   </header>
-  <section class="hero">
+
+  <section class="hero" id="home">
     <div class="hero-content">
-      <h1>Poljoprivredni portal Srbije</h1>
-      <p>Vaš izvor za vesti, savete i inovacije u poljoprivredi.</p>
-      <a class="btn-main" href="#articles">Pogledaj vesti</a>
+      <h1>Prijavi se za ponudu</h1>
+      <p>Moja Zemlja, 7 godina iskustva</p>
+      <a class="btn-main" href="#ponuda">Zatraži ponudu</a>
     </div>
   </section>
-  <section class="section" id="features">
-    <h2>Zašto Moja Zemlja?</h2>
+
+  <section class="section" id="pozadina">
+    <h2>Pozadina</h2>
+    <p>
+      Partneri sa kojima sarađuje Moja Zemlja imaju iza sebe više od 90 hektara aktivnih zasada pod orahom, čime donose bogato znanje i višegodišnje iskustvo u uzgoju ove kulture. Ovi iskusni poljoprivrednici i stručnjaci iz agronomije brinu o sadnji, održavanju i berbi umesto tebe, koristeći proverene agrotehničke metode i mehanizaciju. Njihov rad i rezultati garantuju da je svako stablo zasađeno u skladu sa najvišim standardima, što investitorima donosi sigurnost i stabilan prinos. Kroz saradnju sa tim ljudima, Moja Zemlja ti omogućava da ulažeš u provereno uspešne plantaže, bez potrebe da se sam baviš poljoprivredom.
+    </p>
+  </section>
+
+  <section class="section" id="aktivna-ponuda">
+    <h2>Aktivna ponuda</h2>
+    <h3 style="margin-top:0.5em">Uloži u plantažu oraha i ostvari preko 1.000 evra mesečno</h3>
+    <p>
+      Moja Zemlja je platforma koja nudi investiranje u poljoprivredu potpuno jednostavno i pasivno. Možeš uložiti u ceo hektar – zemlja postaje tvoja – ili u manji deo, recimo, samo jedno stablo određene biljke.
+    </p>
     <div class="features">
       <div class="feature">
-        <img src="https://mojazemlja.rs/wp-content/uploads/2023/12/agro-knowledge.png" alt="Vesti" />
-        <div class="feature-title">Najnovije vesti</div>
-        <div>Budite u toku sa aktuelnim dešavanjima iz sveta poljoprivrede.</div>
+        <div class="feature-title">Posedujemo svu potrebnu mehanizaciju</div>
+        <div>Profesionalna oprema i tim na terenu omogućavaju kvalitetno održavanje zasada.</div>
       </div>
       <div class="feature">
-        <img src="https://mojazemlja.rs/wp-content/uploads/2023/12/agro-tips.png" alt="Saveti" />
-        <div class="feature-title">Saveti stručnjaka</div>
-        <div>Praktični saveti za bolji prinos i održivo gazdinstvo.</div>
+        <div class="feature-title">Preko 7 godina iskustva</div>
+        <div>Tim agronoma i kooperanata sa dokazanim rezultatima na više lokacija.</div>
       </div>
       <div class="feature">
-        <img src="https://mojazemlja.rs/wp-content/uploads/2023/12/agro-tech.png" alt="Inovacije" />
-        <div class="feature-title">Tehnologija i inovacije</div>
-        <div>Upoznajte najnovije trendove u poljoprivrednoj tehnologiji.</div>
+        <div class="feature-title">Zajedno nastupamo na tržištu</div>
+        <div>Organizovana prodaja i plasman proizvoda radi stabilnog prinosa.</div>
       </div>
     </div>
+    <div style="text-align:center">
+      <a class="btn-main" href="#ponuda">Prijavi se za ponudu</a>
+    </div>
   </section>
-  <section class="section" id="articles">
-    <h2>Najnovije vesti</h2>
+
+  <section class="section" id="market">
+    <h2>Prodaja po stablu</h2>
+    <h3 style="margin-top:0.5em">Kupi od drugih investitora</h3>
+    <h4 style="margin-top:0.5em">Market</h4>
+
     <div class="articles">
       <div class="article">
-        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/novi-traktori.jpg" alt="Novi traktori" />
+        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/eko-uzgoj.jpg" alt="Malina" />
         <div class="article-content">
-          <div class="article-title">Novi traktori za modernu poljoprivredu</div>
-          <div class="article-desc">Saznajte sve o najnovijim modelima traktora dostupnim na tržištu Srbije.</div>
-          <a class="article-link btn-main" href="#">Pročitaj više</a>
+          <div class="article-title">Malina kod Užica</div>
+          <div class="article-desc">
+            <div>Broj stabala: -</div>
+            <div>Starost: 3 godine</div>
+            <div>Lokacija: Užice</div>
+            <div>- % godišnji povrat</div>
+            <div>- € po stablu</div>
+          </div>
+          <span class="btn-main" style="pointer-events:none;opacity:0.7">USKORO</span>
         </div>
       </div>
+
       <div class="article">
-        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/eko-uzgoj.jpg" alt="Ekološki uzgoj" />
+        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/digitalna-poljoprivreda.jpg" alt="Borovnica" />
         <div class="article-content">
-          <div class="article-title">Ekološki uzgoj povrća</div>
-          <div class="article-desc">Kako da organski uzgajate povrće uz minimalnu upotrebu hemije.</div>
-          <a class="article-link btn-main" href="#">Pročitaj više</a>
+          <div class="article-title">Borovnica, plantaža kod Užica</div>
+          <div class="article-desc">
+            <div>Broj stabala: -</div>
+            <div>Starost: 4 godine</div>
+            <div>Lokacija: Užice</div>
+            <div>- % godišnji povrat</div>
+            <div>- € po stablu</div>
+          </div>
+          <span class="btn-main" style="pointer-events:none;opacity:0.7">USKORO</span>
         </div>
       </div>
+
       <div class="article">
-        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/digitalna-poljoprivreda.jpg" alt="Digitalna poljoprivreda" />
+        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/novi-traktori.jpg" alt="Orah" />
         <div class="article-content">
-          <div class="article-title">Digitalna poljoprivreda</div>
-          <div class="article-desc">Primena digitalnih alata za unapređenje poljoprivredne proizvodnje.</div>
-          <a class="article-link btn-main" href="#">Pročitaj više</a>
+          <div class="article-title">25 stabala oraha čendler u Malom Žamu, Vršac</div>
+          <div class="article-desc">
+            <div>Broj stabala: 25</div>
+            <div>Starost: 7 godina</div>
+            <div>Lokacija: Mali Žam, Vršac</div>
+            <div>+7,63% godišnji povrat</div>
+            <div>298€ po stablu</div>
+          </div>
+          <span class="btn-main" style="pointer-events:none;opacity:0.7">Prodato</span>
+        </div>
+      </div>
+
+      <div class="article">
+        <img src="https://mojazemlja.rs/img/moja-zemlja-bg.webp" alt="Orah" />
+        <div class="article-content">
+          <div class="article-title">37 stabala oraha čendler u Velikom Središtu, Vršac</div>
+          <div class="article-desc">
+            <div>Broj stabala: 37</div>
+            <div>Starost: 2 godine</div>
+            <div>Lokacija: Veliko Središte, Vršac</div>
+            <div>+7,2% godišnji povrat</div>
+            <div>200€ po stablu</div>
+          </div>
+          <span class="btn-main" style="pointer-events:none;opacity:0.7">Prodato</span>
         </div>
       </div>
     </div>
+
+    <div style="text-align:center;margin-top:1em">
+      <h4>Obavesti me kada bude novih prodaja</h4>
+      <form class="simple-form" style="max-width:420px;margin:auto;display:flex;gap:0.5em;flex-wrap:wrap;align-items:center;justify-content:center">
+        <input type="email" name="email" placeholder="Tvoj email" required style="flex:1;min-width:200px;padding:0.7em;border-radius:6px;border:1px solid #ccc;">
+        <button type="submit" class="btn-main">Prijavi se</button>
+      </form>
+    </div>
   </section>
-  <section class="section" id="contact">
-    <h2>Kontaktirajte nas</h2>
-    <form style="max-width:400px;margin:auto;display:flex;flex-direction:column;gap:0.6em;">
+
+  <section class="section" id="o-nama">
+    <h2>Moja Zemlja</h2>
+    <p>
+      Moja Zemlja je više od platforme – to je zajednica ljudi koji veruju u moć poljoprivrede, stabilna ulaganja i održivu budućnost. Kroz jednostavan model investiranja, omogućavamo ti da postaneš suvlasnik plodnih parcela širom Srbije, bez potrebe da napuštaš svoj svakodnevni posao. Bilo da želiš da uložiš u jedno stablo ili ceo hektar, Moja Zemlja ti pruža potpunu transparentnost, redovne izveštaje o napretku i pristup stručnom timu agronoma i ekonomista. Naš cilj je da zajedno gradimo dugoročnu vrednost – za tebe kao investitora, i za sela i ljude koji obrađuju tu zemlju svakoga dana.
+    </p>
+  </section>
+
+  <section class="section" id="ponuda">
+    <h2>Interesuje te ulaganje u orahe ali i druge kulture?</h2>
+    <p>Ostavi svoju email adresu da dobiješ više informacija o aktuelnoj ponudi.</p>
+    <form class="simple-form" style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:0.6em;">
+      <input type="text" name="name" placeholder="Tvoje ime" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
+      <input type="email" name="email" placeholder="Tvoj email" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
+      <button type="submit" class="btn-main" style="width:100%">Pošalji</button>
+    </form>
+  </section>
+
+  <section class="section" id="kontakt">
+    <h2>Kontakt</h2>
+    <form class="simple-form" style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:0.6em;">
       <input type="text" name="name" placeholder="Vaše ime" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
       <input type="email" name="email" placeholder="Vaš email" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
       <textarea name="message" placeholder="Vaša poruka" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;min-height:80px;"></textarea>
-      <button type="submit" class="btn-main" style="width:100%;">Pošalji</button>
+      <button type="submit" class="btn-main" style="width:100%">Pošalji</button>
     </form>
   </section>
+
   <footer>
     &copy; 2025 Moja Zemlja. Sva prava zadržana.
   </footer>
+
   <script>
-    // Burger menu functionality
     const burger = document.getElementById('burger');
     const mobileNav = document.getElementById('mobile-nav');
     burger.addEventListener('click', function() {
@@ -544,29 +615,23 @@
       burger.setAttribute('aria-expanded', 'false');
       mobileNav.classList.remove('open');
       document.body.classList.remove('nav-open');
-      document.querySelectorAll('.mobile-nav li.open').forEach(li=>li.classList.remove('open'));
     }
-    // Mobile submenu toggle
-    function toggleSubmenuMobile(e) {
-      e.preventDefault();
-      const li = e.target.parentElement;
-      li.classList.toggle('open');
-    }
-    // Optional: Close mobile menu on outside click
     document.addEventListener('click', function(e) {
       if (mobileNav.classList.contains('open') && !mobileNav.contains(e.target) && !burger.contains(e.target)) {
         closeMobileNav();
       }
     });
-    // Optional: Close on esc
     document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape") closeMobileNav();
+      if (e.key === 'Escape') closeMobileNav();
     });
-    // Minimal JS for smooth form UX (no backend)
-    document.querySelector('form').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Hvala na poruci! Javićemo se uskoro.');
-      this.reset();
+
+    // Attach simple success behavior to all simple forms
+    document.querySelectorAll('form.simple-form').forEach(function(formEl){
+      formEl.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Hvala! Uspesno ste poslali podatke. Javićemo se uskoro.');
+        formEl.reset();
+      });
     });
   </script>
 </body>
