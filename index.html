@@ -19,7 +19,7 @@
       --header-height: 96px;
       --header-height-mobile: 84px;
       --menu-hover: var(--accent-hover);
-      --btn-border: 4px solid var(--accent);
+      --btn-border: 1px solid var(--accent);
     }
     html, body {
       margin: 0;
@@ -88,8 +88,9 @@
     }
     .nav-list > li:hover > a,
     .nav-list > li:focus-within > a {
-      background: var(--menu-hover);
-      color: #222;
+      text-decoration: underline;
+      background: transparent;
+      color: inherit;
     }
     .nav-list > li .submenu {
       display: none;
@@ -119,8 +120,9 @@
     }
     .submenu li a:hover,
     .submenu li a:focus {
-      background: var(--menu-hover);
-      color: #222;
+      text-decoration: underline;
+      background: transparent;
+      color: inherit;
     }
 
     /* Burger styles */
@@ -186,8 +188,9 @@
     }
     .mobile-nav > ul > li > a:hover,
     .mobile-nav > ul > li > a:focus {
-      background: var(--menu-hover);
-      color: #222;
+      text-decoration: underline;
+      background: transparent;
+      color: inherit;
     }
     .mobile-nav .submenu-mobile {
       display: none;
@@ -209,8 +212,9 @@
     }
     .mobile-nav .submenu-mobile li a:hover,
     .mobile-nav .submenu-mobile li a:focus {
-      background: var(--menu-hover);
-      color: #222;
+      text-decoration: underline;
+      background: transparent;
+      color: inherit;
     }
 
     /* HERO SECTION */
@@ -265,8 +269,8 @@
     }
     .btn-main:hover, .btn-main:focus {
       background: #fff;
-      color: var(--accent);
-      border: 4px solid var(--accent);
+      color: #222;
+      border: 1px solid var(--accent);
       /* transform removed to prevent size change */
     }
     .section {
@@ -291,7 +295,7 @@
       margin-top: 1.5em;
     }
     .feature {
-      background: var(--accent);
+      background: #fff;
       border-radius: 10px;
       padding: 1em 1.2em;
       width: 260px;
@@ -302,14 +306,10 @@
         background 0.25s,
         color 0.25s,
         transform 0.5s cubic-bezier(0.59, 0.03, 0.2, 1);
-      border: var(--btn-border);
       color: #222;
       font-weight: 500;
     }
     .feature:hover, .feature:focus {
-      background: #fff;
-      border: 4px solid var(--accent);
-      color: var(--accent);
       transform: scale(1.05);
     }
     .feature img {
@@ -329,7 +329,7 @@
       margin-top: 2em;
     }
     .article {
-      background: #faf9f6;
+      background: #fff;
       border-radius: 10px;
       box-shadow: 0 1px 4px #0001;
       overflow: hidden;
@@ -340,12 +340,8 @@
         background 0.25s,
         color 0.25s,
         transform 0.5s cubic-bezier(0.59, 0.03, 0.2, 1);
-      border: var(--btn-border);
     }
     .article:hover, .article:focus {
-      background: #fff;
-      border: 4px solid var(--accent);
-      color: var(--accent);
       transform: scale(1.05);
       box-shadow: 0 4px 16px #2C2C2C1a;
     }
@@ -434,14 +430,12 @@
   <header>
     <div class="logo">
       <img src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" />
-      <span>Moja Zemlja</span>
     </div>
     <nav>
       <ul class="nav-list">
         <li><a href="#home">Početna</a></li>
         <li><a href="#market">Kupi od drugih investitora</a></li>
         <li><a href="#aktivna-ponuda">Investiraj u novu plantažu</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
     <button class="burger" id="burger" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobile-nav">
@@ -454,7 +448,6 @@
         <li><a href="#home" onclick="closeMobileNav()">Početna</a></li>
         <li><a href="#market" onclick="closeMobileNav()">Kupi od drugih investitora</a></li>
         <li><a href="#aktivna-ponuda" onclick="closeMobileNav()">Investiraj u novu plantažu</a></li>
-        <li><a href="#kontakt" onclick="closeMobileNav()">Kontakt</a></li>
       </ul>
     </div>
   </header>
@@ -588,16 +581,6 @@
     <form class="simple-form" style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:0.6em;">
       <input type="text" name="name" placeholder="Tvoje ime" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
       <input type="email" name="email" placeholder="Tvoj email" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
-      <button type="submit" class="btn-main" style="width:100%">Pošalji</button>
-    </form>
-  </section>
-
-  <section class="section" id="kontakt">
-    <h2>Kontakt</h2>
-    <form class="simple-form" style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:0.6em;">
-      <input type="text" name="name" placeholder="Vaše ime" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
-      <input type="email" name="email" placeholder="Vaš email" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
-      <textarea name="message" placeholder="Vaša poruka" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;min-height:80px;"></textarea>
       <button type="submit" class="btn-main" style="width:100%">Pošalji</button>
     </form>
   </section>
