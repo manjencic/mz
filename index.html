@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Moja Zemlja</title>
+  <meta name="description" content="Moja zemlja - poljoprivredni portal.">
+  <link rel="icon" href="https://mojazemlja.rs/wp-content/uploads/2023/12/cropped-logo-32x32.png" sizes="32x32">
+  <style>
+    :root {
+      --main-bg: #f8f8f8;
+      --main-color: #2C2C2C;
+      --accent: #ffc400;
+      --accent-hover: #ffc400;
+      --font-main: 'Segoe UI', 'Arial', sans-serif;
+      --header-height: 96px;
+      --header-height-mobile: 84px;
+      --menu-hover: var(--accent-hover);
+      --btn-border: 4px solid var(--accent);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--main-bg);
+      font-family: var(--font-main);
+      color: #222;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: var(--main-color);
+      color: #fff;
+      height: var(--header-height);
+      min-height: var(--header-height);
+      box-shadow: 0 2px 8px #0002;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0.5em;
+      position: relative;
+      z-index: 10;
+      transition: height 0.2s;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      padding-left: 1em;
+    }
+    .logo img {
+      height: 66px;
+      margin-right: 0.7em;
+    }
+    .logo span {
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav {
+      padding-right: 2em;
+      display: flex;
+      align-items: center;
+      gap: 0.2em;
+      position: relative;
+      z-index: 12;
+    }
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 0.2em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-list > li {
+      position: relative;
+    }
+    .nav-list > li > a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s, background 0.2s;
+      font-size: 1.05em;
+      padding: 0.8em 1.2em;
+      border-radius: 4px;
+      display: block;
+    }
+    .nav-list > li:hover > a,
+    .nav-list > li:focus-within > a {
+      background: var(--menu-hover);
+      color: #222;
+    }
+    .nav-list > li .submenu {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background: var(--main-color);
+      min-width: 220px;
+      box-shadow: 0 4px 16px #0003;
+      border-radius: 0 0 10px 10px;
+      z-index: 11;
+      flex-direction: column;
+      padding: 0.3em 0;
+      transition: opacity 0.2s;
+    }
+    .nav-list > li:hover .submenu,
+    .nav-list > li:focus-within .submenu {
+      display: flex;
+    }
+    .submenu li a {
+      color: #fff;
+      padding: 0.7em 1.2em;
+      text-decoration: none;
+      font-size: 1em;
+      border-radius: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .submenu li a:hover,
+    .submenu li a:focus {
+      background: var(--menu-hover);
+      color: #222;
+    }
+
+    /* Burger styles */
+    .burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      margin-right: 1em;
+      background: none;
+      border: none;
+      outline: none;
+      z-index: 20;
+    }
+    .burger span {
+      display: block;
+      width: 28px;
+      height: 4px;
+      background: #fff;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: var(--header-height-mobile);
+      left: 0;
+      width: 100vw;
+      background: var(--main-color);
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 8px #0002;
+      z-index: 19;
+      padding-bottom: 2em;
+    }
+    .mobile-nav.open {
+      display: flex;
+    }
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .mobile-nav li {
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+    .mobile-nav > ul > li > a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 1em;
+      border-bottom: 1px solid #444;
+      width: 100%;
+      display: block;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mobile-nav > ul > li > a:hover,
+    .mobile-nav > ul > li > a:focus {
+      background: var(--menu-hover);
+      color: #222;
+    }
+    .mobile-nav .submenu-mobile {
+      display: none;
+      flex-direction: column;
+      background: var(--main-color);
+    }
+    .mobile-nav li.open .submenu-mobile {
+      display: flex;
+    }
+    .mobile-nav .submenu-mobile li a {
+      color: #fff;
+      padding: 0.9em 1.2em;
+      border-bottom: 1px solid #444;
+      font-size: 1.1em;
+      transition: background 0.2s, color 0.2s;
+      text-align: left;
+      width: 100%;
+      display: block;
+    }
+    .mobile-nav .submenu-mobile li a:hover,
+    .mobile-nav .submenu-mobile li a:focus {
+      background: var(--menu-hover);
+      color: #222;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: url('https://mojazemlja.rs/img/moja-zemlja-bg.webp') center/cover no-repeat;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 2px 12px #0009;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.6em;
+      margin-bottom: 0.3em;
+      font-family: 'Georgia', serif;
+    }
+    .hero p {
+      font-size: 1.3em;
+      margin-bottom: 1em;
+    }
+    .btn-main {
+      background: var(--accent);
+      color: #222;
+      border: var(--btn-border);
+      padding: 0.8em 2em;
+      font-size: 1.1em;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #0002;
+      transition:
+        background 0.25s,
+        color 0.25s,
+        border 0.25s,
+        transform 0.5s cubic-bezier(0.59, 0.03, 0.2, 1);
+      text-decoration: none;
+      margin: 0.7em auto;
+      display: inline-block;
+    }
+    .btn-main:hover, .btn-main:focus {
+      background: #fff;
+      color: var(--accent);
+      border: 4px solid var(--accent);
+      /* transform removed to prevent size change */
+    }
+    .section {
+      max-width: 1024px;
+      margin: 2em auto;
+      padding: 1em;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .section h2 {
+      color: var(--main-color);
+      margin-top: 0;
+      font-size: 2em;
+      font-family: 'Georgia', serif;
+    }
+    .features {
+      display: flex;
+      gap: 2em;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1.5em;
+    }
+    .feature {
+      background: var(--accent);
+      border-radius: 10px;
+      padding: 1em 1.2em;
+      width: 260px;
+      text-align: center;
+      box-shadow: 0 1px 4px #0001;
+      transition:
+        box-shadow 0.2s,
+        background 0.25s,
+        color 0.25s,
+        transform 0.5s cubic-bezier(0.59, 0.03, 0.2, 1);
+      border: var(--btn-border);
+      color: #222;
+      font-weight: 500;
+    }
+    .feature:hover, .feature:focus {
+      background: #fff;
+      border: 4px solid var(--accent);
+      color: var(--accent);
+      transform: scale(1.05);
+    }
+    .feature img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 0.5em;
+    }
+    .feature-title {
+      font-weight: bold;
+      color: var(--main-color);
+      margin-bottom: 0.5em;
+    }
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5em;
+      margin-top: 2em;
+    }
+    .article {
+      background: #faf9f6;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px #0001;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition:
+        box-shadow 0.2s,
+        background 0.25s,
+        color 0.25s,
+        transform 0.5s cubic-bezier(0.59, 0.03, 0.2, 1);
+      border: var(--btn-border);
+    }
+    .article:hover, .article:focus {
+      background: #fff;
+      border: 4px solid var(--accent);
+      color: var(--accent);
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px #2C2C2C1a;
+    }
+    .article img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .article-content {
+      padding: 1em;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .article-title {
+      font-size: 1.1em;
+      color: var(--main-color);
+      font-weight: bold;
+      margin-bottom: 0.6em;
+    }
+    .article-desc {
+      font-size: 0.98em;
+      color: #333;
+      margin-bottom: 0.7em;
+    }
+    .article-link {
+      align-self: flex-start;
+      color: var(--main-color);
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: 0.98em;
+    }
+    footer {
+      background: var(--main-color);
+      color: #fff;
+      text-align: center;
+      padding: 1em 0;
+      margin-top: 3em;
+      font-size: 1em;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        height: var(--header-height-mobile);
+        min-height: var(--header-height-mobile);
+      }
+      .logo img {
+        height: 50px;
+      }
+      .logo span {
+        font-size: 1.4em;
+      }
+      .features { flex-direction: column; align-items: center; }
+      .feature { width: 90%; }
+      .section { margin: 1em; }
+    }
+    @media (max-width: 700px) {
+      nav {
+        display: none;
+      }
+      .burger {
+        display: flex;
+      }
+      header {
+        height: var(--header-height-mobile);
+        min-height: var(--header-height-mobile);
+      }
+      .mobile-nav {
+        top: var(--header-height-mobile);
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2em; }
+      .features { gap: 1em; }
+      .section { padding: 0.3em; }
+      .articles { gap: 0.7em; }
+      .logo img {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" />
+      <span>Moja Zemlja</span>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li>
+          <a href="#">Početna</a>
+          <ul class="submenu">
+            <li><a href="#">Kupi od drugih investitora</a></li>
+            <li><a href="#">Investiraj u novu plantažu</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="mobile-nav" id="mobile-nav">
+      <ul>
+        <li>
+          <a href="#" class="has-submenu" onclick="toggleSubmenuMobile(event)">Početna</a>
+          <ul class="submenu-mobile">
+            <li><a href="#">Kupi od drugih investitora</a></li>
+            <li><a href="#">Investiraj u novu plantažu</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact" onclick="closeMobileNav()">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Poljoprivredni portal Srbije</h1>
+      <p>Vaš izvor za vesti, savete i inovacije u poljoprivredi.</p>
+      <a class="btn-main" href="#articles">Pogledaj vesti</a>
+    </div>
+  </section>
+  <section class="section" id="features">
+    <h2>Zašto Moja Zemlja?</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="https://mojazemlja.rs/wp-content/uploads/2023/12/agro-knowledge.png" alt="Vesti" />
+        <div class="feature-title">Najnovije vesti</div>
+        <div>Budite u toku sa aktuelnim dešavanjima iz sveta poljoprivrede.</div>
+      </div>
+      <div class="feature">
+        <img src="https://mojazemlja.rs/wp-content/uploads/2023/12/agro-tips.png" alt="Saveti" />
+        <div class="feature-title">Saveti stručnjaka</div>
+        <div>Praktični saveti za bolji prinos i održivo gazdinstvo.</div>
+      </div>
+      <div class="feature">
+        <img src="https://mojazemlja.rs/wp-content/uploads/2023/12/agro-tech.png" alt="Inovacije" />
+        <div class="feature-title">Tehnologija i inovacije</div>
+        <div>Upoznajte najnovije trendove u poljoprivrednoj tehnologiji.</div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="articles">
+    <h2>Najnovije vesti</h2>
+    <div class="articles">
+      <div class="article">
+        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/novi-traktori.jpg" alt="Novi traktori" />
+        <div class="article-content">
+          <div class="article-title">Novi traktori za modernu poljoprivredu</div>
+          <div class="article-desc">Saznajte sve o najnovijim modelima traktora dostupnim na tržištu Srbije.</div>
+          <a class="article-link btn-main" href="#">Pročitaj više</a>
+        </div>
+      </div>
+      <div class="article">
+        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/eko-uzgoj.jpg" alt="Ekološki uzgoj" />
+        <div class="article-content">
+          <div class="article-title">Ekološki uzgoj povrća</div>
+          <div class="article-desc">Kako da organski uzgajate povrće uz minimalnu upotrebu hemije.</div>
+          <a class="article-link btn-main" href="#">Pročitaj više</a>
+        </div>
+      </div>
+      <div class="article">
+        <img src="https://mojazemlja.rs/wp-content/uploads/2024/06/digitalna-poljoprivreda.jpg" alt="Digitalna poljoprivreda" />
+        <div class="article-content">
+          <div class="article-title">Digitalna poljoprivreda</div>
+          <div class="article-desc">Primena digitalnih alata za unapređenje poljoprivredne proizvodnje.</div>
+          <a class="article-link btn-main" href="#">Pročitaj više</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="contact">
+    <h2>Kontaktirajte nas</h2>
+    <form style="max-width:400px;margin:auto;display:flex;flex-direction:column;gap:0.6em;">
+      <input type="text" name="name" placeholder="Vaše ime" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
+      <input type="email" name="email" placeholder="Vaš email" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;">
+      <textarea name="message" placeholder="Vaša poruka" required style="padding:0.7em;border-radius:6px;border:1px solid #ccc;min-height:80px;"></textarea>
+      <button type="submit" class="btn-main" style="width:100%;">Pošalji</button>
+    </form>
+  </section>
+  <footer>
+    &copy; 2025 Moja Zemlja. Sva prava zadržana.
+  </footer>
+  <script>
+    // Burger menu functionality
+    const burger = document.getElementById('burger');
+    const mobileNav = document.getElementById('mobile-nav');
+    burger.addEventListener('click', function() {
+      const expanded = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', !expanded);
+      mobileNav.classList.toggle('open');
+      document.body.classList.toggle('nav-open');
+    });
+    function closeMobileNav() {
+      burger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+      document.body.classList.remove('nav-open');
+      document.querySelectorAll('.mobile-nav li.open').forEach(li=>li.classList.remove('open'));
+    }
+    // Mobile submenu toggle
+    function toggleSubmenuMobile(e) {
+      e.preventDefault();
+      const li = e.target.parentElement;
+      li.classList.toggle('open');
+    }
+    // Optional: Close mobile menu on outside click
+    document.addEventListener('click', function(e) {
+      if (mobileNav.classList.contains('open') && !mobileNav.contains(e.target) && !burger.contains(e.target)) {
+        closeMobileNav();
+      }
+    });
+    // Optional: Close on esc
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closeMobileNav();
+    });
+    // Minimal JS for smooth form UX (no backend)
+    document.querySelector('form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Hvala na poruci! Javićemo se uskoro.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
