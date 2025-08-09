@@ -6,13 +6,16 @@
   <title>Moja Zemlja</title>
   <meta name="description" content="Moja zemlja - poljoprivredni portal.">
   <link rel="icon" href="https://mojazemlja.rs/wp-content/uploads/2023/12/cropped-logo-32x32.png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet">
   <style>
     :root {
       --main-bg: #f8f8f8;
       --main-color: #2C2C2C;
       --accent: #ffc400;
       --accent-hover: #ffc400;
-      --font-main: 'Segoe UI', 'Arial', sans-serif;
+      --font-main: 'Manrope', 'Arial', 'Helvetica', sans-serif;
       --header-height: 96px;
       --header-height-mobile: 84px;
       --menu-hover: var(--accent-hover);
@@ -236,7 +239,7 @@
     .hero h1 {
       font-size: 2.6em;
       margin-bottom: 0.3em;
-      font-family: 'Georgia', serif;
+      font-family: var(--font-main);
     }
     .hero p {
       font-size: 1.3em;
@@ -278,7 +281,7 @@
       color: var(--main-color);
       margin-top: 0;
       font-size: 2em;
-      font-family: 'Georgia', serif;
+      font-family: var(--font-main);
     }
     .features {
       display: flex;
