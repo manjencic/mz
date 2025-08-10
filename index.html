@@ -14,27 +14,11 @@
   <link rel="preconnect" href="https://mojazemlja.rs" crossorigin>
   <link rel="dns-prefetch" href="https://mojazemlja.rs">
   <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" href="/fonts/Herbarium-Regular-Alt.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" href="/fonts/Herbarium-Extras.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" fetchpriority="high">
   <style>
     @font-face {
       font-family: 'Herbarium';
       src: url('/fonts/Herbarium.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Herbarium Alt';
-      src: url('/fonts/Herbarium-Regular-Alt.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Herbarium Extras';
-      src: url('/fonts/Herbarium-Extras.otf') format('opentype');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -863,7 +847,6 @@
 
     // Toggle desktop header style on scroll
     const headerEl = document.querySelector('header');
-    const logoImg = document.getElementById('site-logo');
     function updateHeaderStyle() {
       const isScrolled = window.scrollY > 10;
       if (isScrolled) {
@@ -871,18 +854,8 @@
       } else {
         headerEl.classList.remove('is-scrolled');
       }
-
-      const isMobile = window.innerWidth <= 700;
-      if (logoImg) {
-        if (isMobile) {
-          logoImg.src = 'https://mojazemlja.rs/img/logo-black.png';
-        } else {
-          logoImg.src = 'https://mojazemlja.rs/img/moja-zemlja-logo.png';
-        }
-      }
     }
     window.addEventListener('scroll', updateHeaderStyle, { passive: true });
-    window.addEventListener('resize', updateHeaderStyle);
     document.addEventListener('DOMContentLoaded', updateHeaderStyle);
     updateHeaderStyle();
 
