@@ -517,6 +517,7 @@ header('Vary: Accept-Encoding');
       box-sizing: border-box;
       color: #222;
       font-family: Manrope, Arial, Helvetica, sans-serif;
+	  font-display: swap;
       font-style: normal;
       font-weight: 400;
       letter-spacing: normal;
