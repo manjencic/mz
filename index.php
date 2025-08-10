@@ -346,7 +346,7 @@ header('Vary: Accept-Encoding');
     }
     .btn-main {
       background: var(--accent);
-      color: #222;
+      color: #000;
       border: var(--btn-border);
       padding: 0.8em 2em;
       font-size: 1.1em;
@@ -369,6 +369,15 @@ header('Vary: Accept-Encoding');
       color: #222;
       border: 2px solid var(--accent);
       /* transform removed to prevent size change */
+    }
+    .btn-main.is-disabled,
+    .btn-main[aria-disabled="true"] {
+      pointer-events: none;
+      background: #E8E2A5;
+      color: #000;
+      border: 2px solid #E8E2A5;
+      opacity: 1;
+      cursor: not-allowed;
     }
     /* Simple form alignment */
     .simple-form input[type="email"] {
@@ -409,7 +418,7 @@ header('Vary: Accept-Encoding');
     }
     #aktivna-ponuda h2,
     #market h2 {
-      color: var(--accent);
+      color: var(--main-color);
       font-family: 'Herbarium', Arial, Helvetica, sans-serif;
     }
     .features {
@@ -506,7 +515,7 @@ header('Vary: Accept-Encoding');
     .feature div:not(.feature-title) {
       font-size: 20px;
       box-sizing: border-box;
-      color: rgb(118, 118, 118);
+      color: #222;
       font-family: Manrope, Arial, Helvetica, sans-serif;
       font-style: normal;
       font-weight: 400;
@@ -789,7 +798,7 @@ header('Vary: Accept-Encoding');
             <div>- % godišnji povrat</div>
             <div>- € po stablu</div>
           </div>
-          <span class="btn-main" style="pointer-events:none;opacity:0.7">USKORO</span>
+          <span class="btn-main is-disabled" aria-disabled="true">USKORO</span>
         </div>
       </div>
 
@@ -804,7 +813,7 @@ header('Vary: Accept-Encoding');
             <div>- % godišnji povrat</div>
             <div>- € po stablu</div>
           </div>
-          <span class="btn-main" style="pointer-events:none;opacity:0.7">USKORO</span>
+          <span class="btn-main is-disabled" aria-disabled="true">USKORO</span>
         </div>
       </div>
 
@@ -819,7 +828,7 @@ header('Vary: Accept-Encoding');
             <div>+7,63% godišnji povrat</div>
             <div>298€ po stablu</div>
           </div>
-          <span class="btn-main" style="pointer-events:none;opacity:0.7">Prodato</span>
+          <span class="btn-main is-disabled" aria-disabled="true">Prodato</span>
         </div>
       </div>
 
@@ -834,7 +843,7 @@ header('Vary: Accept-Encoding');
             <div>+7,2% godišnji povrat</div>
             <div>200€ po stablu</div>
           </div>
-          <span class="btn-main" style="pointer-events:none;opacity:0.7">Prodato</span>
+          <span class="btn-main is-disabled" aria-disabled="true">Prodato</span>
         </div>
       </div>
     </div>
