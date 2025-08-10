@@ -534,16 +534,24 @@
       header {
         height: var(--header-height-mobile);
         min-height: var(--header-height-mobile);
+        background: transparent;
+        color: #fff;
+        box-shadow: none;
+      }
+      header.is-scrolled {
         background: #fff;
         color: #222;
         box-shadow: 0 2px 8px #0001;
+      }
+      header.is-scrolled .burger span {
+        background: #222;
       }
       .mobile-nav {
         top: var(--header-height-mobile);
       }
       h1, h2, h3, h4, h5, h6 { line-height: 1; }
       .burger span {
-        background: #222;
+        background: #fff;
       }
     }
     @media (max-width: 600px) {
@@ -579,8 +587,8 @@
   <header>
          <div class="logo">
              <picture>
-               <source media="(max-width: 700px)" srcset="https://mojazemlja.rs/img/logo-black.png">
-               <img src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" />
+               
+               <img id="site-logo" src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" />
              </picture>
     </div>
     <nav>
@@ -846,12 +854,22 @@
 
     // Toggle desktop header style on scroll
     const headerEl = document.querySelector('header');
+    const logoImg = document.getElementById('site-logo');
     function updateHeaderStyle() {
-      const isDesktop = window.innerWidth > 700;
-      if (isDesktop && window.scrollY > 10) {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled) {
         headerEl.classList.add('is-scrolled');
       } else {
         headerEl.classList.remove('is-scrolled');
+      }
+
+      const isMobile = window.innerWidth <= 700;
+      if (logoImg) {
+        if (isMobile && isScrolled) {
+          logoImg.src = 'https://mojazemlja.rs/img/logo-black.png';
+        } else {
+          logoImg.src = 'https://mojazemlja.rs/img/moja-zemlja-logo.png';
+        }
       }
     }
     window.addEventListener('scroll', updateHeaderStyle, { passive: true });
