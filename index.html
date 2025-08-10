@@ -300,9 +300,14 @@
       margin: 0 auto;
       padding: 1em;
     }
-    .hero h1 {
+    .hero h2 {
       font-size: 80px;
       margin-bottom: 0.3em;
+      font-family: 'Herbarium', Arial, Helvetica, sans-serif;
+    }
+    .hero h1.subheading {
+      font-size: 36px;
+      margin: 0 0 0.1em;
       font-family: 'Herbarium', Arial, Helvetica, sans-serif;
     }
     .hero p {
@@ -541,7 +546,9 @@
       .hero {
         padding-top: var(--header-height-mobile);
       }
-      .hero h1 { font-size: 2em; }
+      .hero h1 { font-size: 1em; }
+      .hero h2 { font-size: 2em; }
+      .hero h1.subheading { font-size: 1.2em; }
       .features { gap: 1em; }
       .section { padding: 1em; }
       .articles { gap: 0.7em; }
@@ -590,7 +597,7 @@
   <section class="hero" id="home">
     <div class="hero-content">
       <h1 style="font-size: 1.5em; margin-bottom: 0.5em;">Moja Zemlja</h1>
-      <h1>Zemlja koja zarađuje</h1>
+      <h2>Zemlja koja zarađuje</h2>
       <p>Moja Zemlja je platforma koja nudi investiranje u poljoprivredu potpuno jednostavno i pasivno.</p>
       <p>Bilo da se interesuješ za ulaganje u novu plantažu ili želiš da kupiš stabla od drugih investitora - na pravom si mestu!</p>
       <a class="btn-main" href="#market">Kupi od drugih investitora</a>
