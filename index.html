@@ -70,8 +70,10 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 0.5em;
-      position: sticky;
+      position: absolute;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 10;
       transition: height 0.2s, background-color 0.2s, box-shadow 0.2s;
     }
@@ -275,7 +277,7 @@
     /* HERO SECTION */
     .hero {
       background: url('https://mojazemlja.rs/img/moja-zemlja-bg.webp') center/cover no-repeat;
-      min-height: 525px;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -284,6 +286,7 @@
       text-shadow: 0 2px 12px #0009;
       position: relative;
       background-color: #1a1a1a;
+      padding-top: var(--header-height);
     }
     .hero::after {
       content: none;
@@ -535,6 +538,9 @@
       }
     }
     @media (max-width: 600px) {
+      .hero {
+        padding-top: var(--header-height-mobile);
+      }
       .hero h1 { font-size: 2em; }
       .features { gap: 1em; }
       .section { padding: 1em; }
