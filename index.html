@@ -70,11 +70,12 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 0.5em;
+      position: -webkit-sticky;
       position: sticky;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 10;
+      z-index: 1000;
       transition: height 0.2s, background-color 0.2s, box-shadow 0.2s;
     }
     @media (min-width: 701px) {
@@ -214,6 +215,10 @@
     }
     .mobile-nav.open {
       display: flex;
+    }
+
+    body.nav-open {
+      overflow: hidden;
     }
     .mobile-nav ul {
       list-style: none;
