@@ -7,14 +7,38 @@ unset($_SESSION['success'], $_SESSION['error']);
 <!DOCTYPE html>
 <html lang="sr">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPCLL1PLT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WXPCLL1PLT');
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Moja Zemlja</title>
-  <meta name="description" content="Moja zemlja - poljoprivredni portal.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Moja Zemlja - Investiranje u poljoprivredu</title>
+  <meta name="description" content="Platforma za investiranje u poljoprivredu: orahe, borovnice, maline, lešnike... Ulaganje u 1 hektar ili u jedno stablo.">
+  <meta name='robots' content='index, follow' />
   <link rel="icon" href="https://mojazemlja.rs/wp-content/uploads/2023/12/cropped-logo-32x32.png" sizes="32x32">
+  <link rel='dns-prefetch' href='//fonts.googleapis.com' />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://mojazemlja.rs" crossorigin>
   <link rel="dns-prefetch" href="https://mojazemlja.rs">
+  <meta property="og:title" content="Moja Zemlja - Investiranje u poljoprivredu. Jednostavno. Pasivno." />
+  <meta property="og:description" content="Platforma za investiranje u poljoprivredu: orahe, borovnice, maline, lešnike... Ulaganje u 1 hektar ili u jedno stablo." />
+  <meta property="og:image" content="https://mojazemlja.rs/img/moja-zemlja-cover.jpg" />
+  <meta property="og:url" content="https://mojazemlja.rs/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Moja Zemlja">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Moja Zemlja - Investiranje u poljoprivredu. Jednostavno. Pasivno." />
+  <meta name="twitter:description" content="Platforma za investiranje u poljoprivredu: orahe, borovnice, maline, lešnike... Ulaganje u 1 hektar ili u jedno stablo." />
+  <meta name="twitter:image" content="https://mojazemlja.rs/img/moja-zemlja-cover.jpg" />
+  <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
   <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" type="image/webp" fetchpriority="high">
   <style>
