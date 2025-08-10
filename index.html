@@ -207,7 +207,7 @@
       position: absolute;
       top: var(--header-height-mobile);
       left: 0;
-      width: 100vw;
+      width: 100%;
       background: var(--main-color);
       flex-direction: column;
       align-items: center;
@@ -540,9 +540,9 @@
       header {
         height: var(--header-height-mobile);
         min-height: var(--header-height-mobile);
-        background: transparent;
-        color: #fff;
-        box-shadow: none;
+        background: #fff;
+        color: #222;
+        box-shadow: 0 2px 8px #0001;
       }
       header.is-scrolled {
         background: #fff;
@@ -557,7 +557,7 @@
       }
       h1, h2, h3, h4, h5, h6 { line-height: 1; }
       .burger span {
-        background: #fff;
+        background: #222;
       }
     }
     @media (max-width: 600px) {
