@@ -70,7 +70,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 0.5em;
-      position: absolute;
+      position: sticky;
       top: 0;
       left: 0;
       right: 0;
@@ -286,7 +286,6 @@
       text-shadow: 0 2px 12px #0009;
       position: relative;
       background-color: #1a1a1a;
-      padding-top: var(--header-height);
     }
     .hero::after {
       content: none;
@@ -544,7 +543,7 @@
     }
     @media (max-width: 600px) {
       .hero {
-        padding-top: var(--header-height-mobile);
+        padding-top: 0;
       }
       .hero h1 { font-size: 1em; }
       .hero h2 { font-size: 2em; }
