@@ -13,11 +13,32 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap"></noscript>
   <link rel="preconnect" href="https://mojazemlja.rs" crossorigin>
   <link rel="dns-prefetch" href="https://mojazemlja.rs">
-  <link rel="preconnect" href="https://fonts.cdnfonts.com">
-  <link rel="dns-prefetch" href="https://fonts.cdnfonts.com">
-  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/herbarium">
+  <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/fonts/Herbarium-Regular-Alt.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/fonts/Herbarium-Extras.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" fetchpriority="high">
   <style>
+    @font-face {
+      font-family: 'Herbarium';
+      src: url('/fonts/Herbarium.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Herbarium Alt';
+      src: url('/fonts/Herbarium-Regular-Alt.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Herbarium Extras';
+      src: url('/fonts/Herbarium-Extras.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
     :root {
       --main-bg: #fff;
       --main-color: #2C2C2C;
