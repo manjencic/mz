@@ -15,9 +15,7 @@
   <link rel="dns-prefetch" href="https://mojazemlja.rs">
   <link rel="preconnect" href="https://fonts.cdnfonts.com">
   <link rel="dns-prefetch" href="https://fonts.cdnfonts.com">
-  <link rel="preload" as="style" href="https://fonts.cdnfonts.com/css/herbarium">
-  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/herbarium" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.cdnfonts.com/css/herbarium"></noscript>
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/herbarium">
   <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" fetchpriority="high">
   <style>
     :root {
@@ -271,7 +269,7 @@
     .hero h1 {
       font-size: 2.6em;
       margin-bottom: 0.3em;
-      font-family: var(--font-main);
+      font-family: 'Herbarium', Arial, Helvetica, sans-serif;
     }
     .hero p {
       font-size: 1.3em;
@@ -295,6 +293,7 @@
       margin: 0.7em auto;
       display: inline-block;
     }
+    .hero .btn-main + .btn-main { margin-left: 20px; }
     .btn-main:hover, .btn-main:focus {
       background: #fff;
       color: #222;
@@ -491,6 +490,13 @@
       .logo img {
         max-height: 40px;
       }
+      .section p,
+      .article .article-desc,
+      .feature div:not(.feature-title),
+      .hero p {
+        line-height: 20px;
+      }
+      .hero .btn-main + .btn-main { margin-left: 0; margin-top: 16px; }
     }
   </style>
 </head>
