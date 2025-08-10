@@ -470,9 +470,15 @@
       header {
         height: var(--header-height-mobile);
         min-height: var(--header-height-mobile);
+        background: #fff;
+        color: #222;
+        box-shadow: 0 2px 8px #0001;
       }
       .mobile-nav {
         top: var(--header-height-mobile);
+      }
+      .burger span {
+        background: #222;
       }
     }
     @media (max-width: 600px) {
@@ -489,7 +495,10 @@
 <body>
   <header>
          <div class="logo">
-             <img src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" />
+             <picture>
+               <source media="(max-width: 700px)" srcset="https://mojazemlja.rs/img/logo-black.png">
+               <img src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" />
+             </picture>
     </div>
     <nav>
       <ul class="nav-list">
