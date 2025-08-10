@@ -377,7 +377,7 @@ header('Vary: Accept-Encoding');
       margin: 0.7em auto;
       display: inline-block;
     }
-    .hero .btn-main { margin: 0.7em 0; }
+    .hero .btn-main { margin: 0.7em 0; text-shadow: none; }
     .hero .btn-main + .btn-main { margin-left: 20px; }
     .btn-main:hover, .btn-main:focus {
       background: #fff;
@@ -691,8 +691,8 @@ header('Vary: Accept-Encoding');
   </section>
 
   <section class="section" id="aktivna-ponuda">
-    <h2>Aktivna ponuda</h2>
-    <h3 style="margin-top:0.5em">Uloži u plantažu oraha i ostvari preko 1.000 evra mesečno</h3>
+    <h2 style="color: var(--accent)">Aktivna ponuda</h2>
+    <h3 style="margin-top:0.5em; font-size: 2em">Uloži u plantažu oraha i ostvari preko 1.000 evra mesečno</h3>
     <p>
       Moja Zemlja je platforma koja nudi investiranje u poljoprivredu potpuno jednostavno i pasivno. Možeš uložiti u ceo hektar – zemlja postaje tvoja – ili u manji deo, recimo, samo jedno stablo određene biljke.
     </p>
@@ -798,7 +798,7 @@ header('Vary: Accept-Encoding');
   </section>
 
   <section class="section" id="market">
-    <h2>Prodaja po stablu</h2>
+    <h2 style="color: var(--accent)">Prodaja po stablu</h2>
     <h3 style="margin-top:0.5em">Kupi od drugih investitora</h3>
     <h4 style="margin-top:0.5em">Market</h4>
 
