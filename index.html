@@ -59,6 +59,7 @@
       scroll-behavior: smooth;
       font-weight: 400;
       line-height: 1.75;
+      overflow-x: hidden;
     }
     /* Offset in-page anchors for fixed header */
     html { scroll-padding-top: var(--header-height); }
@@ -306,6 +307,7 @@
       width: 100%;
       margin: 0 auto;
       padding: 1em;
+      box-sizing: border-box;
     }
     @media (max-width: 700px) {
       .hero-content { padding-top: var(--header-height-mobile); }
