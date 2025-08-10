@@ -878,14 +878,7 @@ unset($_SESSION['success'], $_SESSION['error']);
     document.addEventListener('DOMContentLoaded', updateHeaderStyle);
     updateHeaderStyle();
 
-    // Attach simple success behavior to all simple forms
-    document.querySelectorAll('form.simple-form').forEach(function(formEl){
-      formEl.addEventListener('submit', function(e){
-        e.preventDefault();
-        alert('Hvala! Uspesno ste poslali podatke. Javićemo se uskoro.');
-        formEl.reset();
-      });
-    });
+
   </script>
 </body>
 </html>
