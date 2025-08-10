@@ -593,6 +593,7 @@
   <header>
          <div class="logo">
              <picture>
+               <source media="(max-width: 700px)" srcset="https://mojazemlja.rs/img/logo-black.png">
                
                <img id="site-logo" src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" />
              </picture>
@@ -871,7 +872,7 @@
 
       const isMobile = window.innerWidth <= 700;
       if (logoImg) {
-        if (isMobile && isScrolled) {
+        if (isMobile) {
           logoImg.src = 'https://mojazemlja.rs/img/logo-black.png';
         } else {
           logoImg.src = 'https://mojazemlja.rs/img/moja-zemlja-logo.png';
