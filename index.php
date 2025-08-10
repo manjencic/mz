@@ -1,8 +1,12 @@
 <?php
+session_cache_limiter('');
 session_start();
 $success = $_SESSION['success'] ?? null;
 $error = $_SESSION['error'] ?? null;
 unset($_SESSION['success'], $_SESSION['error']);
+session_write_close();
+header('Cache-Control: private, max-age=600');
+header('Vary: Accept-Encoding');
 ?>
 <!DOCTYPE html>
 <html lang="sr">
@@ -40,6 +44,9 @@ unset($_SESSION['success'], $_SESSION['error']);
   <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" as="image" href="/img/moja-zemlja-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 768px)">
   <link rel="preload" as="image" href="/img/moja-zemlja-bg.webp" type="image/webp" media="(min-width: 769px)">
+  <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" type="image/webp" fetchpriority="high">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <style>
     @font-face {
       font-family: 'Herbarium';
@@ -514,7 +521,7 @@ unset($_SESSION['success'], $_SESSION['error']);
     }
     
           footer {
-        background: url("https://mojazemlja.rs/img/moja-zemlja-footer.jpg") center center / cover no-repeat, var(--main-color);
+        background: var(--main-color);
         color: #fff;
         text-align: center;
         margin-top: 3em;
@@ -526,6 +533,10 @@ unset($_SESSION['success'], $_SESSION['error']);
         align-items: center;
         justify-content: center;
         gap: 0.8em;
+      }
+
+      .footer-has-bg {
+        background: url("https://mojazemlja.rs/img/moja-zemlja-footer.jpg") center center / cover no-repeat, var(--main-color);
       }
 
       .footer-logo {
@@ -906,7 +917,28 @@ unset($_SESSION['success'], $_SESSION['error']);
     document.addEventListener('DOMContentLoaded', updateHeaderStyle);
     updateHeaderStyle();
 
-
+    // Lazy-load the heavy footer background image when near viewport
+    (function() {
+      const footerEl = document.querySelector('footer');
+      if (!footerEl) return;
+      const addBg = () => footerEl.classList.add('footer-has-bg');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              addBg();
+              obs.disconnect();
+              break;
+            }
+          }
+        }, { rootMargin: '600px' });
+        observer.observe(footerEl);
+      } else {
+        addBg();
+      }
+    })();
+ 
+ 
   </script>
 </body>
 </html>
