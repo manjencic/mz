@@ -375,6 +375,11 @@ unset($_SESSION['success'], $_SESSION['error']);
       font-size: 2em;
       font-family: var(--font-main);
     }
+    #aktivna-ponuda h2,
+    #market h2 {
+      color: var(--accent);
+      font-family: 'Herbarium', Arial, Helvetica, sans-serif;
+    }
     .features {
       display: flex;
       gap: 2em;
