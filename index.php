@@ -1,3 +1,9 @@
+<?php
+session_start();
+$success = $_SESSION['success'] ?? null;
+$error = $_SESSION['error'] ?? null;
+unset($_SESSION['success'], $_SESSION['error']);
+?>
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -7,10 +13,6 @@
   <meta name="description" content="Moja zemlja - poljoprivredni portal.">
   <link rel="icon" href="https://mojazemlja.rs/wp-content/uploads/2023/12/cropped-logo-32x32.png" sizes="32x32">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap"></noscript>
   <link rel="preconnect" href="https://mojazemlja.rs" crossorigin>
   <link rel="dns-prefetch" href="https://mojazemlja.rs">
   <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
@@ -637,18 +639,18 @@
 	c2.3,2.2,4.7,4.3,7.2,6.2H7c-3.9,0-7,3.1-7,7c0,3.9,3.1,7,7,7h416c3.9,0,7-3.1,7-7C430,350.3,426.9,347.1,423,347.1L423,347.1z
 	 M301.6,347.1c-43.6-0.1-78.9-35.4-79-79v-0.1c0-43.6,35.4-79,79-79s79,35.4,79,79v0.1C380.5,311.8,345.2,347.1,301.6,347.1z
 	 M410.2,261.1h-15.9c-3.9-51.2-48.5-89.6-99.7-85.7c-45.8,3.4-82.3,39.9-85.7,85.7h-15.9c3.9-60,55.6-105.5,115.6-101.6
-	C363.2,163,406.7,206.5,410.2,261.1L410.2,261.1z M237,163.5h-20.3l32.4-119.4h93.1v108.1c-34.9-12.3-73.5-8.1-105,11.3
-	C237.2,163.5,237.1,163.5,237,163.5z M225.9,14h146.3v149.5h-6.3c-3.1-1.9-6.3-3.7-9.7-5.4v-121c0-3.9-3.1-7-7-7H243.8
+	 C363.2,163,406.7,206.5,410.2,261.1L410.2,261.1z M237,163.5h-20.3l32.4-119.4h93.1v108.1c-34.9-12.3-73.5-8.1-105,11.3
+	 C237.2,163.5,237.1,163.5,237,163.5z M225.9,14h146.3v149.5h-6.3c-3.1-1.9-6.3-3.7-9.7-5.4v-121c0-3.9-3.1-7-7-7H243.8
 	c-3.2,0-5.9,2.1-6.8,5.2l-34.8,128.2h-16.5L225.9,14z M81.5,119h21.4v56.6l-21.4,3.6V119z M176.3,177.7c0.6,0,1.1,0,1.7-0.1h28.4
 	c0.4,0.1,0.8,0.1,1.2,0.2c0.3,0,0.6-0.1,1-0.2h10.2c-25.5,23.2-40,56.1-40,90.6c0,3.9,3.1,7,7,7h23.2c0.3,3.4,0.7,6.7,1.3,10h-67
 	c-3.8-37.8-37.5-65.4-75.3-61.6c-10,1-19.6,4.2-28.3,9.3v-32.3L176.3,177.7z M19.6,292.2c0-30.4,24.6-55,55-55s55,24.6,55,55v0
 	c0,30.4-24.6,55-55,55C44.2,347.1,19.6,322.5,19.6,292.2z M116,347.1c15.3-11.5,25.2-28.9,27.1-48h70.8c7.1,19.9,20.7,36.8,38.7,48
 	L116,347.1z"></path>
 <path d="M301.6,223.9c-24.5,0-44.3,19.8-44.3,44.3c0,24.5,19.8,44.3,44.3,44.3s44.3-19.8,44.3-44.3l0,0
-	C345.8,243.7,326,223.9,301.6,223.9z M301.6,298.4c-16.7,0-30.3-13.6-30.3-30.3s13.6-30.3,30.3-30.3c16.7,0,30.3,13.6,30.3,30.3l0,0
-	C331.8,284.9,318.3,298.4,301.6,298.4z"></path>
+	 C345.8,243.7,326,223.9,301.6,223.9z M301.6,298.4c-16.7,0-30.3-13.6-30.3-30.3s13.6-30.3,30.3-30.3c16.7,0,30.3,13.6,30.3,30.3l0,0
+	 C331.8,284.9,318.3,298.4,301.6,298.4z"></path>
 <path d="M74.5,258.3c-18.7,0-33.9,15.2-33.9,33.9c0,18.7,15.2,33.9,33.9,33.9c18.7,0,33.9-15.2,33.9-33.9
-	C108.4,273.5,93.2,258.3,74.5,258.3z M74.5,312c-11,0-19.9-8.9-19.9-19.9c0-11,8.9-19.9,19.9-19.9c11,0,19.9,8.9,19.9,19.9
+	 C108.4,273.5,93.2,258.3,74.5,258.3z M74.5,312c-11,0-19.9-8.9-19.9-19.9c0-11,8.9-19.9,19.9-19.9c11,0,19.9,8.9,19.9,19.9
 	c0,0,0,0,0,0C94.4,303.1,85.5,312,74.5,312L74.5,312z"></path>
 </svg>
         <div class="feature-title">Posedujemo svu potrebnu mehanizaciju</div>
@@ -813,6 +815,17 @@
     <div id="ponuda" style="max-width:1200px; padding:40px 40px 24px; text-align:center; margin-bottom:2.5em; background:#fff; color:#222; border-radius:10px; box-shadow:0 4px 16px #0003;">
       <h2>Interesuje te ulaganje u orahe ali i druge kulture?</h2>
       <p>Ostavi svoju email adresu da dobiješ više informacija o aktuelnoj ponudi.</p>
+      <?php if ($success): ?>
+        <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px;">
+          <?= htmlspecialchars($success) ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($error): ?>
+        <div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px;">
+          <?= htmlspecialchars($error) ?>
+        </div>
+      <?php endif; ?>
       <form class="simple-form" style="max-width:500px;margin:1.2em auto 0;display:flex;flex-direction:column;gap:1em;">
         <input type="email" name="email" placeholder="E-mail adresa" required style="width:100%;padding:12px;border:1px solid #f7f5ea;border-radius:6px;font-size:16px;background:#f7f5ea;border-color:#f7f5ea;">
         <button type="submit" class="btn-main" style="width:100%">Pošalji</button>
