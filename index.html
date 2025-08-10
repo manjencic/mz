@@ -61,11 +61,11 @@
       line-height: 1.75;
     }
     header {
-      background: var(--main-color);
+      background: transparent;
       color: #fff;
       height: var(--header-height);
       min-height: var(--header-height);
-      box-shadow: 0 2px 8px #0002;
+      box-shadow: none;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -73,7 +73,13 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      transition: height 0.2s;
+      transition: height 0.2s, background-color 0.2s, box-shadow 0.2s;
+    }
+    @media (min-width: 701px) {
+      header.is-scrolled {
+        background: #000;
+        box-shadow: 0 2px 8px #0002;
+      }
     }
     .logo {
       display: flex;
@@ -583,8 +589,8 @@
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <h1 class="subheading">Moja Zemlja</h1>
-      <h1>Zemlja koja zarađuje</h1>
+      <h1 style="font-size: 1.5em; margin-bottom: 0.5em;">Moja Zemlja</h1>
+      <h2>Zemlja koja zarađuje</h2>
       <p>Moja Zemlja je platforma koja nudi investiranje u poljoprivredu potpuno jednostavno i pasivno.</p>
       <p>Bilo da se interesuješ za ulaganje u novu plantažu ili želiš da kupiš stabla od drugih investitora - na pravom si mestu!</p>
       <a class="btn-main" href="#market">Kupi od drugih investitora</a>
@@ -820,6 +826,21 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeMobileNav();
     });
+
+    // Toggle desktop header style on scroll
+    const headerEl = document.querySelector('header');
+    function updateHeaderStyle() {
+      const isDesktop = window.innerWidth > 700;
+      if (isDesktop && window.scrollY > 10) {
+        headerEl.classList.add('is-scrolled');
+      } else {
+        headerEl.classList.remove('is-scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateHeaderStyle, { passive: true });
+    window.addEventListener('resize', updateHeaderStyle);
+    document.addEventListener('DOMContentLoaded', updateHeaderStyle);
+    updateHeaderStyle();
 
     // Attach simple success behavior to all simple forms
     document.querySelectorAll('form.simple-form').forEach(function(formEl){
