@@ -1,0 +1,1 @@
+<h1>All blog posts</h1>\n<ul>\n@foreach( as )\n  <li><a href="{{ route(blog.show, ) }}">{{ ->title }}</a></li>\n@endforeach\n</ul>
