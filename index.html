@@ -286,9 +286,13 @@
       position: relative;
       z-index: 1;
       text-align: left;
+      max-width: 1024px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1em;
     }
     .hero h1 {
-      font-size: 2.6em;
+      font-size: 80px;
       margin-bottom: 0.3em;
       font-family: 'Herbarium', Arial, Helvetica, sans-serif;
     }
@@ -573,7 +577,7 @@
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <h1 style="font-family: Herbarium, Arial, Helvetica, sans-serif; font-size: 120px;">Zemlja koja zaradjuje</h1>
+      <h1>Zemlja koja zaradjuje</h1>
       <p>Moja Zemlja je platforma koja nudi investiranje u poljoprivredu potpuno jednostavno i pasivno.</p>
       <p>Bilo da se interesuješ za ulaganje u novu plantažu ili želiš da kupiš stabla od drugih investitora - na pravom si mestu!</p>
       <a class="btn-main" href="#market">Kupi od drugih investitora</a>
@@ -774,8 +778,8 @@
   </section>
 
   <footer>
-         <img class="footer-logo" src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" loading="lazy" decoding="async" fetchpriority="low" height="56" />
-    <div id="ponuda" style="max-width:1200px; padding:24px 40px; text-align:center; margin-bottom:1.2em; background:#fff; color:#222; border-radius:10px; box-shadow:0 4px 16px #0003;">
+         
+    <div id="ponuda" style="max-width:1200px; padding:40px 40px 24px; text-align:center; margin-bottom:1.2em; background:#fff; color:#222; border-radius:10px; box-shadow:0 4px 16px #0003;">
       <h2>Interesuje te ulaganje u orahe ali i druge kulture?</h2>
       <p>Ostavi svoju email adresu da dobiješ više informacija o aktuelnoj ponudi.</p>
       <form class="simple-form" style="max-width:500px;margin:1.2em auto 0;display:flex;flex-direction:column;gap:1em;">
@@ -783,6 +787,7 @@
         <button type="submit" class="btn-main" style="width:100%">Pošalji</button>
       </form>
     </div>
+    <img class="footer-logo" src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" loading="lazy" decoding="async" fetchpriority="low" height="56" />
     <div class="footer-text">2025 Moja Zemlja. Sva prava zadržana.</div>
   </footer>
 
