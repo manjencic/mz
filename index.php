@@ -11,12 +11,26 @@ header('Vary: Accept-Encoding');
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXPCLL1PLT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-WXPCLL1PLT');
+    function gtag(){dataLayer.push(arguments);}    
+  </script>
+  <script>
+    (function(){
+      function loadAnalytics(){
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WXPCLL1PLT';
+        s.async = true;
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-WXPCLL1PLT');
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 3000 });
+      } else {
+        setTimeout(loadAnalytics, 2000);
+      }
+    })();
   </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8">
@@ -42,6 +56,7 @@ header('Vary: Accept-Encoding');
   <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
   <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" as="image" href="/img/moja-zemlja-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 768px)">
+  <link rel="preload" as="image" href="/img/moja-zemlja-bg.webp" type="image/webp" media="(min-width: 769px)">
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <style>
@@ -634,7 +649,7 @@ header('Vary: Accept-Encoding');
              <picture>
                <source media="(max-width: 700px)" srcset="https://mojazemlja.rs/img/logo-black.png">
                
-               <img id="site-logo" src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" />
+               <img id="site-logo" src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" fetchpriority="low" />
              </picture>
     </div>
     <nav>
