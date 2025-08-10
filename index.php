@@ -38,7 +38,8 @@ unset($_SESSION['success'], $_SESSION['error']);
   <meta name="twitter:image" content="https://mojazemlja.rs/img/moja-zemlja-cover.jpg" />
   <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
   <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/img/moja-zemlja-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 768px)">
+  <link rel="preload" as="image" href="/img/moja-zemlja-bg.webp" type="image/webp" media="(min-width: 769px)">
   <style>
     @font-face {
       font-family: 'Herbarium';
@@ -292,7 +293,7 @@ unset($_SESSION['success'], $_SESSION['error']);
 
     /* HERO SECTION */
     .hero {
-      background: url('https://mojazemlja.rs/img/moja-zemlja-bg.webp') center/cover no-repeat;
+      background: url('/img/moja-zemlja-bg-mobile.webp') center/cover no-repeat;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -302,6 +303,11 @@ unset($_SESSION['success'], $_SESSION['error']);
       text-shadow: 0 2px 12px #0009;
       position: relative;
       background-color: #1a1a1a;
+    }
+    @media (min-width: 769px) {
+      .hero {
+        background: url('/img/moja-zemlja-bg.webp') center/cover no-repeat;
+      }
     }
     .hero::after {
       content: none;
