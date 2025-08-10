@@ -70,8 +70,11 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 0.5em;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
       z-index: 10;
       transition: height 0.2s, background-color 0.2s, box-shadow 0.2s;
     }
@@ -284,6 +287,7 @@
       text-shadow: 0 2px 12px #0009;
       position: relative;
       background-color: #1a1a1a;
+      padding-top: var(--header-height);
     }
     .hero::after {
       content: none;
@@ -526,6 +530,7 @@
         color: #222;
         box-shadow: 0 2px 8px #0001;
       }
+      .hero { padding-top: var(--header-height-mobile); }
       .mobile-nav {
         top: var(--header-height-mobile);
       }
