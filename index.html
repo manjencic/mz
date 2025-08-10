@@ -307,7 +307,8 @@
       padding: 1em;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 2px 8px #0001;
+      border: none;
+      box-shadow: none;
       content-visibility: auto;
       contain-intrinsic-size: 1000px;
     }
@@ -470,16 +471,22 @@
       header {
         height: var(--header-height-mobile);
         min-height: var(--header-height-mobile);
+        background: #fff;
+        color: #222;
+        box-shadow: 0 2px 8px #0001;
       }
       .mobile-nav {
         top: var(--header-height-mobile);
       }
       h1, h2, h3, h4, h5, h6 { line-height: 1; }
+      .burger span {
+        background: #222;
+      }
     }
     @media (max-width: 600px) {
       .hero h1 { font-size: 2em; }
       .features { gap: 1em; }
-      .section { padding: 0.3em; }
+      .section { padding: 1em; }
       .articles { gap: 0.7em; }
       .logo img {
         max-height: 40px;
@@ -490,7 +497,10 @@
 <body>
   <header>
          <div class="logo">
-             <img src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" />
+             <picture>
+               <source media="(max-width: 700px)" srcset="https://mojazemlja.rs/img/logo-black.png">
+               <img src="https://mojazemlja.rs/img/moja-zemlja-logo.png" alt="Moja Zemlja" height="66" decoding="async" />
+             </picture>
     </div>
     <nav>
       <ul class="nav-list">
