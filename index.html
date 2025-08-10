@@ -61,11 +61,11 @@
       line-height: 1.75;
     }
     header {
-      background: var(--main-color);
+      background: transparent;
       color: #fff;
       height: var(--header-height);
       min-height: var(--header-height);
-      box-shadow: 0 2px 8px #0002;
+      box-shadow: none;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -73,7 +73,13 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      transition: height 0.2s;
+      transition: height 0.2s, background-color 0.2s, box-shadow 0.2s;
+    }
+    @media (min-width: 701px) {
+      header.is-scrolled {
+        background: #000;
+        box-shadow: 0 2px 8px #0002;
+      }
     }
     .logo {
       display: flex;
@@ -813,6 +819,21 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeMobileNav();
     });
+
+    // Toggle desktop header style on scroll
+    const headerEl = document.querySelector('header');
+    function updateHeaderStyle() {
+      const isDesktop = window.innerWidth > 700;
+      if (isDesktop && window.scrollY > 10) {
+        headerEl.classList.add('is-scrolled');
+      } else {
+        headerEl.classList.remove('is-scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateHeaderStyle, { passive: true });
+    window.addEventListener('resize', updateHeaderStyle);
+    document.addEventListener('DOMContentLoaded', updateHeaderStyle);
+    updateHeaderStyle();
 
     // Attach simple success behavior to all simple forms
     document.querySelectorAll('form.simple-form').forEach(function(formEl){
