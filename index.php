@@ -25,7 +25,6 @@ header('Vary: Accept-Encoding');
   <title>Moja Zemlja - Investiranje u poljoprivredu</title>
   <meta name="description" content="Platforma za investiranje u poljoprivredu: orahe, borovnice, maline, lešnike... Ulaganje u 1 hektar ili u jedno stablo.">
   <meta name='robots' content='index, follow' />
-  <link rel="icon" href="https://mojazemlja.rs/wp-content/uploads/2023/12/cropped-logo-32x32.png" sizes="32x32">
   <link rel="preconnect" href="https://mojazemlja.rs" crossorigin>
   <link rel="dns-prefetch" href="https://mojazemlja.rs">
   <meta property="og:title" content="Moja Zemlja - Investiranje u poljoprivredu. Jednostavno. Pasivno." />
