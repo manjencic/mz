@@ -43,8 +43,6 @@ header('Vary: Accept-Encoding');
   <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
   <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" as="image" href="/img/moja-zemlja-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 768px)">
-  <link rel="preload" as="image" href="/img/moja-zemlja-bg.webp" type="image/webp" media="(min-width: 769px)">
-  <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" type="image/webp" fetchpriority="high">
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <style>
