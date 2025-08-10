@@ -826,8 +826,9 @@ unset($_SESSION['success'], $_SESSION['error']);
           <?= htmlspecialchars($error) ?>
         </div>
       <?php endif; ?>
-      <form class="simple-form" style="max-width:500px;margin:1.2em auto 0;display:flex;flex-direction:column;gap:1em;">
+      <form action="/prijava.php" method="POST" class="simple-form" style="max-width:500px;margin:1.2em auto 0;display:flex;flex-direction:column;gap:1em;">
         <input type="email" name="email" placeholder="E-mail adresa" required style="width:100%;padding:12px;border:1px solid #f7f5ea;border-radius:6px;font-size:16px;background:#f7f5ea;border-color:#f7f5ea;">
+        <input type="text" name="website" style="display:none;">
         <button type="submit" class="btn-main" style="width:100%">Pošalji</button>
       </form>
     </div>
