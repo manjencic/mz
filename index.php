@@ -20,7 +20,7 @@ header('Vary: Accept-Encoding');
   </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <title>Moja Zemlja - Investiranje u poljoprivredu</title>
   <meta name="description" content="Platforma za investiranje u poljoprivredu: orahe, borovnice, maline, lešnike... Ulaganje u 1 hektar ili u jedno stablo.">
