@@ -16,7 +16,7 @@ unset($_SESSION['success'], $_SESSION['error']);
   <link rel="preconnect" href="https://mojazemlja.rs" crossorigin>
   <link rel="dns-prefetch" href="https://mojazemlja.rs">
   <link rel="preload" href="/fonts/Herbarium.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="https://mojazemlja.rs/img/moja-zemlja-bg.webp" type="image/webp" fetchpriority="high">
   <style>
     @font-face {
       font-family: 'Herbarium';
