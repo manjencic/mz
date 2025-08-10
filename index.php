@@ -377,7 +377,7 @@ header('Vary: Accept-Encoding');
       margin: 0.7em auto;
       display: inline-block;
     }
-    .hero .btn-main { margin: 0.7em 0; }
+    .hero .btn-main { margin: 0.7em 0; text-shadow: none; }
     .hero .btn-main + .btn-main { margin-left: 20px; }
     .btn-main:hover, .btn-main:focus {
       background: #fff;
@@ -433,9 +433,10 @@ header('Vary: Accept-Encoding');
     }
     #aktivna-ponuda h2,
     #market h2 {
-      color: var(--main-color);
+      color: var(--accent);
       font-family: 'Herbarium', Arial, Helvetica, sans-serif;
     }
+    #aktivna-ponuda h3 { font-size: 1.4em; }
     .features {
       display: flex;
       gap: 2em;
